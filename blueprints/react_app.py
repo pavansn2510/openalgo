@@ -191,6 +191,12 @@ def react_tools():
     return serve_react_app()
 
 
+# Option Chain for options analysis
+@react_bp.route("/optionchain")
+def react_optionchain():
+    return serve_react_app()
+
+
 # IV Chart for options implied volatility
 @react_bp.route("/ivchart")
 def react_ivchart():
@@ -498,7 +504,50 @@ def react_flow_index():
 
 # Flow Editor (Visual Workflow Builder)
 @react_bp.route("/flow/editor/<int:workflow_id>", strict_slashes=False)
+@react_bp.route("/flow/editor/<workflow_id>", strict_slashes=False)
 def react_flow_editor(workflow_id):
+    return serve_react_app()
+
+
+# Flow Shortcuts
+@react_bp.route("/flow/shortcuts", strict_slashes=False)
+def react_flow_shortcuts():
+    return serve_react_app()
+
+
+# Master Contract
+@react_bp.route("/master-contract", strict_slashes=False)
+def react_master_contract():
+    return serve_react_app()
+
+
+# Health Monitor
+@react_bp.route("/health", strict_slashes=False)
+def react_health():
+    return serve_react_app()
+
+
+# Historify Charts
+@react_bp.route("/historify/charts", strict_slashes=False)
+@react_bp.route("/historify/charts/<symbol>", strict_slashes=False)
+def react_historify_charts(symbol=None):
+    return serve_react_app()
+
+
+# Python Strategy Guide & Schedule
+@react_bp.route("/python/guide", strict_slashes=False)
+def react_python_guide():
+    return serve_react_app()
+
+
+@react_bp.route("/python/<strategy_id>/schedule", strict_slashes=False)
+def react_python_schedule(strategy_id):
+    return serve_react_app()
+
+
+# API Key Management UI
+@react_bp.route("/apikey", strict_slashes=False)
+def react_apikey():
     return serve_react_app()
 
 
